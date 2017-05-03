@@ -16,10 +16,13 @@ import android.widget.TextView;
 
 public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterViewHolder> {
 
+    // the following stores the number of items in the grid
     private int posterNumbers;
 
+    // the following is what will be used to store the button to be called later for the click
     private Button detailsButton;
 
+    // This is the context that will be used for the activity in the Intent
     private Context currentContext;
 
     public PosterAdapter(int numberOfPosters, Context context){
@@ -45,6 +48,8 @@ public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.PosterView
     @Override
     public void onBindViewHolder(PosterViewHolder holder, int position) {
 
+        // the following is going to be the onClickListener for the button to take the user from
+        // from the main activity to the details activity
         detailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
